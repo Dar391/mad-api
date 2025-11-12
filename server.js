@@ -14,12 +14,15 @@ app.get("/", (req, res) => {
   res.send(`Server is running at ${PORT}`);
 });
 
+app.use("/authAPIs", authAPI);
+app.use("/profileAPIs", profileAPI);
+
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-app.use("/authAPIs", authAPI);
-app.use("/profileAPIs", profileAPI);
+
 
 /**
  * const { db } = require("./firebase");

@@ -9,6 +9,11 @@ app.use(express.json());
 const authAPI = require("./APIs/authenticationAPIs");
 const profileAPI = require("./APIs/profileAPIs");
 
+
+app.get("/", (req, res) => {
+  res.send(`Server is running at ${PORT}`);
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
